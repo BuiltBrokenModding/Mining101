@@ -46,7 +46,7 @@ public final class Mining extends AbstractMod
 
     public Mining()
     {
-        super(DOMAIN);
+        super(DOMAIN, "Mining101");
     }
 
     @Mod.EventHandler
