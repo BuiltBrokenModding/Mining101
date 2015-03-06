@@ -1,4 +1,4 @@
-package com.builtbroken.mining.content;
+package com.builtbroken.mining.content.items.tools;
 
 import com.builtbroken.mc.prefab.items.ItemAbstractTool;
 import net.minecraft.item.Item;
