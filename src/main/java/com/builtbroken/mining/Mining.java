@@ -1,12 +1,18 @@
 package com.builtbroken.mining;
 
+import com.builtbroken.mc.core.Engine;
+import com.builtbroken.mc.core.content.entity.EntityExCreeper;
 import com.builtbroken.mc.lib.mod.AbstractMod;
 import com.builtbroken.mc.lib.mod.ModCreativeTab;
+import com.builtbroken.mining.content.items.EntityThrowableTorch;
+import com.builtbroken.mining.content.items.ItemThrowableTorch;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.EntityRegistry;
+import net.minecraft.item.Item;
 
 /**
  * Created by robert on 11/18/2014.
@@ -44,6 +50,8 @@ public final class Mining extends AbstractMod
 
     public static ModCreativeTab CREATIVE_TAB;
 
+    public static Item itemThrowableTorch;
+
     public Mining()
     {
         super(DOMAIN, "Mining101");
@@ -55,6 +63,11 @@ public final class Mining extends AbstractMod
         super.preInit(event);
         CREATIVE_TAB = new ModCreativeTab("Mining101");
         getManager().setTab(CREATIVE_TAB);
+
+        itemThrowableTorch = getManager().newItem("throwableTorch", ItemThrowableTorch.class);
+
+        EntityRegistry.registerGlobalEntityID(EntityThrowableTorch.class, "eThrowableTorch", EntityRegistry.findGlobalUniqueEntityId());
+        EntityRegistry.registerModEntity(EntityThrowableTorch.class, "eThrowableTorch", 57, this, 100, 1, true);
     }
 
     @Mod.EventHandler
