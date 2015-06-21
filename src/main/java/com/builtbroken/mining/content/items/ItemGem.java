@@ -5,20 +5,20 @@ package com.builtbroken.mining.content.items;
  */
 public class ItemGem
 {
-    public static enum Gems
+    public enum Gems
     {
         DIAMOND,
         EMERALD,
-        RUBY;
+        RUBY
     }
 
-    public static enum Types
+    public enum Types
     {
         /** Gem is still in stone */
         ENCASED,
         /** Gem is removed from stone  */
         UNCUT,
         /** Gem is cut into a basic shape ready for use */
-        CUT;
+        CUT
     }
 }
