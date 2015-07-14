@@ -1,11 +1,10 @@
 package com.builtbroken.mining;
 
-import com.builtbroken.mc.core.Engine;
-import com.builtbroken.mc.core.content.entity.EntityExCreeper;
 import com.builtbroken.mc.lib.mod.AbstractMod;
 import com.builtbroken.mc.lib.mod.ModCreativeTab;
 import com.builtbroken.mining.content.items.EntityThrowableTorch;
 import com.builtbroken.mining.content.items.ItemThrowableTorch;
+
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
