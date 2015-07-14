@@ -1,6 +1,11 @@
 package com.builtbroken.mining.content.items.tools;
 
 import com.builtbroken.mc.prefab.items.ItemAbstractTool;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.block.Block;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemTool;
 
@@ -14,4 +19,27 @@ import net.minecraft.item.ItemTool;
  */
 public class ItemMultiTool extends ItemAbstractTool
 {
+    public ItemMultiTool()
+    {
+        super();
+        this.setUnlocalizedName("multiTool");
+    }
+
+    private boolean upgradable()
+    {
+        return false;
+    }
+
+
+    public boolean validBlocks()
+    {
+        return false;
+    }
+
+
+    @SideOnly(Side.CLIENT)
+    public void registerIcons(IIconRegister register)
+    {
+        itemIcon = register.registerIcon("multiTool");
+    }
 }

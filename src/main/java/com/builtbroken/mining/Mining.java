@@ -4,6 +4,8 @@ import com.builtbroken.mc.lib.mod.AbstractMod;
 import com.builtbroken.mc.lib.mod.ModCreativeTab;
 import com.builtbroken.mining.content.items.EntityThrowableTorch;
 import com.builtbroken.mining.content.items.ItemThrowableTorch;
+import com.builtbroken.mining.content.items.ModItems;
+import com.builtbroken.mining.content.items.tools.ItemMultiTool;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
@@ -50,6 +52,7 @@ public final class Mining extends AbstractMod
     public static ModCreativeTab CREATIVE_TAB;
 
     public static Item itemThrowableTorch;
+    public static Item itemMultiTool;
 
     public Mining()
     {
@@ -62,6 +65,8 @@ public final class Mining extends AbstractMod
         super.preInit(event);
         CREATIVE_TAB = new ModCreativeTab("Mining101");
         getManager().setTab(CREATIVE_TAB);
+
+        ModItems.register();
 
         itemThrowableTorch = getManager().newItem("throwableTorch", ItemThrowableTorch.class);
 
