@@ -1,5 +1,7 @@
 ## Master language file
 itemGroup.Mining101=Mining 101
+## Items
+item.mining101:multiTool.name=Multi-Tool
 ## Misc Blocks
 
 

@@ -66,9 +66,8 @@ public final class Mining extends AbstractMod
         CREATIVE_TAB = new ModCreativeTab("Mining101");
         getManager().setTab(CREATIVE_TAB);
 
-        ModItems.register();
-
         itemThrowableTorch = getManager().newItem("throwableTorch", ItemThrowableTorch.class);
+        itemMultiTool = getManager().newItem("multiTool", ItemMultiTool.class);
 
         EntityRegistry.registerGlobalEntityID(EntityThrowableTorch.class, "eThrowableTorch", EntityRegistry.findGlobalUniqueEntityId());
         EntityRegistry.registerModEntity(EntityThrowableTorch.class, "eThrowableTorch", 57, this, 100, 1, true);

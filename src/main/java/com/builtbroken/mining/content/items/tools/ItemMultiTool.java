@@ -4,9 +4,10 @@ import com.builtbroken.mc.prefab.items.ItemAbstractTool;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
 
 /** Pick-ax, Ax, Shovel, and wrench all in one tool. Will automatically change texture to
@@ -19,27 +20,44 @@ import net.minecraft.item.ItemTool;
  */
 public class ItemMultiTool extends ItemAbstractTool
 {
+    private int tier;
+
     public ItemMultiTool()
     {
         super();
-        this.setUnlocalizedName("multiTool");
+        this.setCreativeTab(CreativeTabs.tabMaterials);
+    }
+
+    private void doUpgrade()
+    {
+        if (upgradable())
+        {
+            upgrade();
+        }
+    }
+
+    private final int getTier()
+    {
+        return tier;
+    }
+
+    private void upgrade()
+    {
+        tier++;
     }
 
     private boolean upgradable()
     {
-        return false;
+        if (tier >= 5)
+        {
+            return false;
+        }
+        return true;
     }
-
-
-    public boolean validBlocks()
-    {
-        return false;
-    }
-
 
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister register)
     {
-        itemIcon = register.registerIcon("multiTool");
+        itemIcon = register.registerIcon("mining101:multiTool");
     }
 }
